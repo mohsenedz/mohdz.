@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>نموذج الحجز</title>
+  <style>
+    body { background-image: url('img001.png'); /*
+       تأكد من وجود الصورة أو ضع رابط مباشر */
+     
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 600px; /* تم تكبير العرض */
+      max-width: 90%;
+    }
+
+    input, textarea, button {
+      padding: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 18px;
+      
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+      
+    }
+
+    button {
+      background-color: #ff8B0B;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+      
+    }
+
+    button:hover {
+      background-color: #e07a08;
+     
+    }
+  </style>
+</head>
+<body>
+
+<form action="https://formsubmit.co/mohsendebih@gmail.com" method="POST">
+  <!-- الاسم -->
+  <input type="text" name="الاسم" placeholder="name" required>
+
+  <!-- اللقب -->
+  <input type="text" name="اللقب" placeholder="last name" required>
+
+  <!-- رقم الهاتف -->
+  <input type="number" name="رقم الهاتف" placeholder="number phone" required>
+
+  <!-- الرسالة -->
+  <textarea name="الرسالة" placeholder="massage" required></textarea>
+
+  <!-- حماية من السبام -->
+  <input type="text" name="_honey" style="display:none">
+
+  <!-- تعطيل الكابتشا -->
+  <input type="hidden" name="_captcha" value="false">
+
+  <!-- عنوان الرسالة -->
+  <input type="hidden" name="_subject" value="حجز">
+
+  <!-- إرسال -->
+  <button type="submit">send</button>
+</form>
+
+</body>
+</html>
