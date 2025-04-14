@@ -1,61 +1,74 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عرض موحد لكل الشاشات</title>
+  <title>عرض صور تلقائي متجاوب</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap');
     body {
+      background: #101010;
       margin: 0;
       padding: 0;
-      background: #101010;
-      display: flex;
-      justify-content: center;
-    }
+      height: 100%;
+  
+         
+    font-family: 'Aref Ruqaa', serif;
 
-    .container {
-      width: 375px; /* عرض ثابت مثل الموبايل */
-      position: relative;
-      background: #101010;
+      
+      
+      
+      
     }
-
-    #moh {
-      margin: -6px;
-      padding: 10px;
-      background: black;
-      border-left: 10px solid #FF8B0B;
-      color: #FF8B0B;
-      font-family: Comic Sans MS, cursive;
-    }
-
-    #moh2 {
-      width: 50px;
-      position: absolute;
-      top: -8px;
-      left: 300px;
-    }
-
-    #moh3 {
-      width: 100%;
-      position: absolute;
-      top: 63px;
-      left: 0px;
-    }
-
-    #ff {
-      color: #FF8B0B;
-      position: absolute;
-      top: 255px;
-      left: 2px;
-    }
+ #moh2{
+     width: 40px;
+     border:0px solid black;
+     position: absolute;
+      top: 3%;
+      Right: 5%;
+     }
+      #moh3{
+     width: 100%;
+     }
+     #moh{
+         color:#FF8B0B;
+         border-left: 10px solid #FF8B0B;
+         background: black;
+         padding: 12px;
+         
+      }
+     #mm{
+   border:2px solid black;
+   padding:5px 10px;
+border-radius: 25px;
+   color:black;
+  font-size: 30px;
+  background:#FF8B0B;
+  
+     }
+     
+     .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; 
+  
+}
+     
   </style>
 </head>
 <body>
+  
+  <img src="img1.png" id="moh2">
+<h1 id="moh">Doctor </h1>
+  <img src="img2.jpg" id="moh3">
+   <h1 id="moh">to appointment </h1>
+   
+   <body>
   <div class="container">
-    <h1 id="moh">Doctor </h1>
-    <img src="img1.png" id="moh2">
-    <img src="img2.jpg" id="moh3">
-    <h1 id="ff">_________________________</h1>
-  </div>
+   
+   <h1 id="mm">appointment</h1>
+   
+   </div>
 </body>
 </html>
