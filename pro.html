@@ -6,60 +6,76 @@
   <title>عرض صور تلقائي متجاوب</title>
   <style>
     body {
-     
-           
-      background:  #101010
-       ;
+      background: #101010;
+      
     }
 
-
-#moh{
-   margin: -6px;
+    #moh {
+      margin: -6px;
       padding: 10px;
-    background:black;
+      background: black;
       border-left: 10px solid #FF8B0B;
-color:#FF8B0B;
-    font-family: Comic Sans MS, cursive;
-   
-}
+      color: #FF8B0B;
+      font-family: Comic Sans MS, cursive;
+      font-size: 24px;
+    }
 
-#moh2{
-    width : 50px;
-    position: absolute;
-    top: -8px;
-    left: 300px;
-}
-#moh3{
-    width : 100%;
-    position: absolute;
-    top: 63px;
-    left: 0px;
-}
+    #moh2 {
+      width: 50px;
+      position: absolute;
+      top: -8px;
+      left: 600px;
+    }
 
-#ff{
-    color:#FF8B0B;
-    position: absolute;
-    top: 255px;
-    left: 2px;
-    
-}
+    #moh3 {
+      width: 100%;
+      position: absolute;
+      top: 63px;
+      left: 0px;
+    }
 
- 
+    #ff {
+      color: #FF8B0B;
+      position: absolute;
+      top: 260px;
+      left: 2px;
+    }
+
+    /* تحسين العرض على الشاشات الصغيرة */
+    @media (max-width: 600px) {
+      #moh {
+        font-size: 32px;
+      }
+
+      #moh2 {
+        left: 200px;
+        width: 40px;
+      }
+
+      #ff {
+        font-size: 14px;
+        top: 240px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      #moh2 {
+        left: 300px;
+        width: 50px;
+      }
+
+      #ff {
+        font-size: 32px;
+        top: 260px;
+      }
+    }
   </style>
 </head>
 <body>
-<h1 id="moh">Doctor </h1>
-      <img src="img1.png" id="moh2">
-      <img src="img2.jpg" id="moh3">
+  <h1 id="moh">Doctor </h1>
+  <img src="img1.png" id="moh2">
+  <img src="img2.jpg" id="moh3">
 
-<h1 id="ff">_________________________</h1>
-
-
-
-<script>
-
-
-</script>
-
+  <h1 id="ff">_________________________</h1>
 </body>
 </html>
