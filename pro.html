@@ -93,6 +93,55 @@ border-radius: 25px;
   
      
      
+     
+     
+     //اللغة//
+     
+     
+     .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      background-color: #ff8B0B;
+      color: white;
+      padding: 10px 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 5px;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #e07a08;
+    }
+     
   </style>
 </head>
 <body>
@@ -110,10 +159,15 @@ border-radius: 25px;
    <p style="color: #FF8B0B">hi if you want to her you kann with mie just tell me and just call me wen you went to come </p></div>
   
   <div class="container">
-    <h1 id="mm">appointment</h1>  </div>
+    <h1 id="mm" onclick="nn()">appointment</h1>  </div>
     <h1 id="moh0">who im </h1>
  <div class="m1">
    <p style="color: #FF8B0B">hi if you want to her you kann with mie just tell me and just call me wen you went to come </p></div>
+ 
+ <h1 id="moh0">wath we doing </h1>
+ <div class="m1">
+   <p style="color: #FF8B0B">hi if you want to her you kann with mie just tell me and just call me wen you went to come </p></div>
+ 
   <h1 id="moh0"> rate people or img </h1>
   
   
@@ -127,6 +181,37 @@ border-radius: 25px;
   <img src="img22.jpg">
   <img src="img33.jpg">
 </div>
+<h1 id="moh0">information </h1>
+ <div class="m1">
+   <p style="color: #FF8B0B">hi if you want to her you kann with mie just tell me and just call me wen you went to come </p></div>
+
+
+
+
+
+<hr style="border: 1px solid #ff8B0B;">
+
+
+//زراللغة//
+
+
+<div class="dropdown">
+  <button class="dropbtn">🌐 Sprache wählen</button>
+  <div class="dropdown-content">
+    <a href="#" onclick="setLanguage('de')">Deutsch</a>
+    <a href="#" onclick="setLanguage('en')">English</a>
+    <a href="#" onclick="setLanguage('fr')">Français</a>
+    <a href="#" onclick="setLanguage('ar')">العربية</a>
+  </div>
+</div>
+
+
+
+
+
+
+ <div class="m1">
+   <p style="color: #FF8B0B">© Copyright Medical Clinic. </p></div>
 
 <script>
   let images = document.querySelectorAll("#slider img");
@@ -137,6 +222,43 @@ border-radius: 25px;
     current = (current + 1) % images.length;
     images[current].classList.add("active");
   }, 3000);
+  
+  //زراللغة//
+  
+  const translations = {
+    de: {
+      title: "Willkommen!",
+      description: "Wähle deine Sprache aus dem Menü oben."
+    },
+    en: {
+      title: "Welcome!",
+      description: "Choose your language from the menu above."
+    },
+    fr: {
+      title: "Bienvenue!",
+      description: "Choisissez votre langue dans le menu ci-dessus."
+    },
+    ar: {
+      title: "مرحبًا!",
+      description: "اختر لغتك من القائمة أعلاه."
+    }
+  };
+
+  function setLanguage(lang) {
+    document.getElementById("title").innerText = translations[lang].title;
+    document.getElementById("description").innerText = translations[lang].description;
+    document.body.dir = lang === 'ar' ? 'rtl' : 'ltr'; // دعم اتجاه اللغة
+  }
+  
+  function nn(){
+      
+       window.location.href = "pro.html";
+  }
+  
+  
+  
+  
+  
 </script>
 
 
