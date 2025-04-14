@@ -3,11 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عرض صور تلقائي متجاوب</title>
+  <title>عرض موحد لكل الشاشات</title>
   <style>
     body {
+      margin: 0;
+      padding: 0;
       background: #101010;
-      
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 375px; /* عرض ثابت مثل الموبايل */
+      position: relative;
+      background: #101010;
     }
 
     #moh {
@@ -17,14 +26,13 @@
       border-left: 10px solid #FF8B0B;
       color: #FF8B0B;
       font-family: Comic Sans MS, cursive;
-      font-size: 24px;
     }
 
     #moh2 {
       width: 50px;
       position: absolute;
       top: -8px;
-      left: 600px;
+      left: 300px;
     }
 
     #moh3 {
@@ -37,45 +45,17 @@
     #ff {
       color: #FF8B0B;
       position: absolute;
-      top: 260px;
+      top: 255px;
       left: 2px;
-    }
-
-    /* تحسين العرض على الشاشات الصغيرة */
-    @media (max-width: 600px) {
-      #moh {
-        font-size: 32px;
-      }
-
-      #moh2 {
-        left: 200px;
-        width: 40px;
-      }
-
-      #ff {
-        font-size: 14px;
-        top: 240px;
-      }
-    }
-
-    @media (max-width: 400px) {
-      #moh2 {
-        left: 300px;
-        width: 50px;
-      }
-
-      #ff {
-        font-size: 32px;
-        top: 260px;
-      }
     }
   </style>
 </head>
 <body>
-  <h1 id="moh">Doctor </h1>
-  <img src="img1.png" id="moh2">
-  <img src="img2.jpg" id="moh3">
-
-  <h1 id="ff">_________________________</h1>
+  <div class="container">
+    <h1 id="moh">Doctor </h1>
+    <img src="img1.png" id="moh2">
+    <img src="img2.jpg" id="moh3">
+    <h1 id="ff">_________________________</h1>
+  </div>
 </body>
 </html>
