@@ -17,28 +17,33 @@
 
       
       
-      
+     
       
     }
  #moh2{
-     width: 40px;
-     border:0px solid black;
-     position: absolute;
-      top: 3%;
-      Right: 5%;
+     width: 70px;
+   padding:10 % 20%;
      }
+   
+   .mn {
+    
+  border: 5px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:#FF8B0B;
+}
+   
       #moh3{
      width: 100%;
      }
      #moh{
-         color:#FF8B0B;
-         border-left: 10px solid #FF8B0B;
-         background: black;
+         color:#black;
          padding: 12px;
          
       }
      #mm{
-   border:2px solid black;
+   border:2px solid #FF8B0B;
    padding:5px 10px;
 border-radius: 25px;
    color:black;
@@ -54,21 +59,97 @@ border-radius: 25px;
   height: 50vh; 
   
 }
+     .m1 {display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh; 
+         padding:2px 30px
+     }
+     //صور//
+      
+ #slider {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  #slider img {
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+
+  #slider img.active {
+    display: block;
+  }
+     
+     #moh0{
+         background:black;
+         color : #FF8B0B;
+         border-left: 10px solid #FF8B0B;
+         
+  
+     
      
   </style>
 </head>
 <body>
   
+<dive class="mn">
+ 
   <img src="img1.png" id="moh2">
-<h1 id="moh">Doctor </h1>
+  <h1 id="moh">Doctor   </h1>
+</dive>
   <img src="img2.jpg" id="moh3">
-   <h1 id="moh">to appointment </h1>
+   <h1 id="moh0">to appointment </h1>
    
    <body>
+  <div class="m1">
+   <p style="color: #FF8B0B">hi if you want to her you kann with mie just tell me and just call me wen you went to come </p></div>
+  
   <div class="container">
-   
-   <h1 id="mm">appointment</h1>
-   
-   </div>
+    <h1 id="mm">appointment</h1>  </div>
+    <h1 id="moh0">who im </h1>
+ <div class="m1">
+   <p style="color: #FF8B0B">hi if you want to her you kann with mie just tell me and just call me wen you went to come </p></div>
+  <h1 id="moh0"> rate people or img </h1>
+  
+  
+  
+  
+  
+  
+  
+ <div id="slider">
+  <img src="img11.jpg" class="active">
+  <img src="img22.jpg">
+  <img src="img33.jpg">
+</div>
+
+<script>
+  let images = document.querySelectorAll("#slider img");
+  let current = 0;
+
+  setInterval(() => {
+    images[current].classList.remove("active");
+    current = (current + 1) % images.length;
+    images[current].classList.add("active");
+  }, 3000);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
 </body>
 </html>
