@@ -2,11 +2,10 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>نموذج الحجز</title>
+  <title id="pageTitle">نموذج الحجز</title>
   <style>
-    body { background-image: url('img001.png'); /*
-       تأكد من وجود الصورة أو ضع رابط مباشر */
-     
+    body {
+      background-image: url('img001.png');
       background-size: cover;
       background-position: center;
       font-family: Arial, sans-serif;
@@ -16,6 +15,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column; /* للسماح بعرض زر اللغة فوق */
+    }
+
+    #languageSelect {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 6px;
     }
 
     form {
@@ -26,7 +35,7 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-      width: 600px; /* تم تكبير العرض */
+      width: 600px;
       max-width: 90%;
     }
 
@@ -35,13 +44,11 @@
       border-radius: 6px;
       border: 1px solid #ccc;
       font-size: 18px;
-      
     }
 
     textarea {
       resize: vertical;
       min-height: 150px;
-      
     }
 
     button {
@@ -51,42 +58,75 @@
       cursor: pointer;
       font-weight: bold;
       font-size: 18px;
-      
     }
 
     button:hover {
       background-color: #e07a08;
-     
     }
   </style>
 </head>
 <body>
 
+<!-- زر اختيار اللغة -->
+<select id="languageSelect" onchange="setLanguage(this.value)">
+  <option value="ar">العربية</option>
+  <option value="en">English</option>
+  <option value="fr">Français</option>
+</select>
+
 <form action="https://formsubmit.co/mohsendebih@gmail.com" method="POST">
-  <!-- الاسم -->
-  <input type="text" name="الاسم" placeholder="name" required>
+  <input type="text" name="الاسم" id="nameInput" placeholder="الاسم" required>
+  <input type="text" name="اللقب" id="surnameInput" placeholder="اللقب" required>
+  <input type="number" name="رقم الهاتف" id="phoneInput" placeholder="رقم الهاتف" required>
+  <textarea name="الرسالة" id="messageInput" placeholder="اكتب رسالتك هنا..." required></textarea>
 
-  <!-- اللقب -->
-  <input type="text" name="اللقب" placeholder="last name" required>
-
-  <!-- رقم الهاتف -->
-  <input type="number" name="رقم الهاتف" placeholder="number phone" required>
-
-  <!-- الرسالة -->
-  <textarea name="الرسالة" placeholder="massage" required></textarea>
-
-  <!-- حماية من السبام -->
   <input type="text" name="_honey" style="display:none">
-
-  <!-- تعطيل الكابتشا -->
   <input type="hidden" name="_captcha" value="false">
-
-  <!-- عنوان الرسالة -->
   <input type="hidden" name="_subject" value="حجز">
 
-  <!-- إرسال -->
-  <button type="submit">send</button>
+  <button type="submit" id="sendBtn">إرسال</button>
 </form>
+
+<script>
+  const translations = {
+    ar: {
+      pageTitle: "نموذج الحجز",
+      nameInput: "الاسم",
+      surnameInput: "اللقب",
+      phoneInput: "رقم الهاتف",
+      messageInput: "اكتب رسالتك هنا...",
+      sendBtn: "إرسال"
+    },
+    en: {
+      pageTitle: "Reservation Form",
+      nameInput: "First Name",
+      surnameInput: "Last Name",
+      phoneInput: "Phone Number",
+      messageInput: "Write your message here...",
+      sendBtn: "Send"
+    },
+    fr: {
+      pageTitle: "Formulaire de Réservation",
+      nameInput: "Prénom",
+      surnameInput: "Nom de famille",
+      phoneInput: "Numéro de téléphone",
+      messageInput: "Écrivez votre message ici...",
+      sendBtn: "Envoyer"
+    }
+  };
+
+  function setLanguage(lang) {
+    document.getElementById("pageTitle").innerText = translations[lang].pageTitle;
+    document.getElementById("nameInput").placeholder = translations[lang].nameInput;
+    document.getElementById("surnameInput").placeholder = translations[lang].surnameInput;
+    document.getElementById("phoneInput").placeholder = translations[lang].phoneInput;
+    document.getElementById("messageInput").placeholder = translations[lang].messageInput;
+    document.getElementById("sendBtn").innerText = translations[lang].sendBtn;
+
+    // تغيير اتجاه الصفحة إذا كانت اللغة عربية
+    document.body.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+  }
+</script>
 
 </body>
 </html>
