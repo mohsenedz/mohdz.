@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <title id="pageTitle">نموذج الحجز</title>
+  <title id="pageTitle">Reservation Form</title>
   <style>
     body {
       background-image: url('img001.png');
@@ -15,7 +15,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column; /* للسماح بعرض زر اللغة فوق */
+      flex-direction: column;
     }
 
     #languageSelect {
@@ -69,22 +69,23 @@
 
 <!-- زر اختيار اللغة -->
 <select id="languageSelect" onchange="setLanguage(this.value)">
-  <option value="ar">العربية</option>
   <option value="en">English</option>
+  <option value="ar">العربية</option>
   <option value="fr">Français</option>
+  <option value="de">Deutsch</option>
 </select>
 
 <form action="https://formsubmit.co/mohsendebih@gmail.com" method="POST">
-  <input type="text" name="الاسم" id="nameInput" placeholder="الاسم" required>
-  <input type="text" name="اللقب" id="surnameInput" placeholder="اللقب" required>
-  <input type="number" name="رقم الهاتف" id="phoneInput" placeholder="رقم الهاتف" required>
-  <textarea name="الرسالة" id="messageInput" placeholder="اكتب رسالتك هنا..." required></textarea>
+  <input type="text" name="الاسم" id="nameInput" placeholder="First Name" required>
+  <input type="text" name="اللقب" id="surnameInput" placeholder="Last Name" required>
+  <input type="number" name="رقم الهاتف" id="phoneInput" placeholder="Phone Number" required>
+  <textarea name="الرسالة" id="messageInput" placeholder="Write your message here..." required></textarea>
 
   <input type="text" name="_honey" style="display:none">
   <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_subject" value="حجز">
+  <input type="hidden" name="_subject" value="Reservation">
 
-  <button type="submit" id="sendBtn">إرسال</button>
+  <button type="submit" id="sendBtn">Send</button>
 </form>
 
 <script>
@@ -112,6 +113,14 @@
       phoneInput: "Numéro de téléphone",
       messageInput: "Écrivez votre message ici...",
       sendBtn: "Envoyer"
+    },
+    de: {
+      pageTitle: "Reservierungsformular",
+      nameInput: "Vorname",
+      surnameInput: "Nachname",
+      phoneInput: "Telefonnummer",
+      messageInput: "Schreiben Sie hier Ihre Nachricht...",
+      sendBtn: "Senden"
     }
   };
 
@@ -123,9 +132,159 @@
     document.getElementById("messageInput").placeholder = translations[lang].messageInput;
     document.getElementById("sendBtn").innerText = translations[lang].sendBtn;
 
-    // تغيير اتجاه الصفحة إذا كانت اللغة عربية
     document.body.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+    document.documentElement.lang = lang;
   }
+
+  // تفعيل الترجمة الإنجليزية تلقائيًا عند التحميل
+  window.onload = function () {
+    setLanguage('en');
+  };
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title id="pageTitle">Reservation Form</title>
+  <style>
+    body {
+      background-image: url('img001.png');
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #languageSelect {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 6px;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 600px;
+      max-width: 90%;
+    }
+
+    input, textarea, button {
+      padding: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 18px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    button {
+      background-color: #ff8B0B;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    button:hover {
+      background-color: #e07a08;
+    }
+  </style>
+</head>
+<body>
+
+<!-- زر اختيار اللغة -->
+<select id="languageSelect" onchange="setLanguage(this.value)">
+  <option value="en">English</option>
+  <option value="ar">العربية</option>
+  <option value="fr">Français</option>
+  <option value="de">Deutsch</option>
+</select>
+
+<form action="https://formsubmit.co/mohsendebih@gmail.com" method="POST">
+  <input type="text" name="الاسم" id="nameInput" placeholder="First Name" required>
+  <input type="text" name="اللقب" id="surnameInput" placeholder="Last Name" required>
+  <input type="number" name="رقم الهاتف" id="phoneInput" placeholder="Phone Number" required>
+  <textarea name="الرسالة" id="messageInput" placeholder="Write your message here..." required></textarea>
+
+  <input type="text" name="_honey" style="display:none">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="Reservation">
+
+  <button type="submit" id="sendBtn">Send</button>
+</form>
+
+<script>
+  const translations = {
+    ar: {
+      pageTitle: "نموذج الحجز",
+      nameInput: "الاسم",
+      surnameInput: "اللقب",
+      phoneInput: "رقم الهاتف",
+      messageInput: "اكتب رسالتك هنا...",
+      sendBtn: "إرسال"
+    },
+    en: {
+      pageTitle: "Reservation Form",
+      nameInput: "First Name",
+      surnameInput: "Last Name",
+      phoneInput: "Phone Number",
+      messageInput: "Write your message here...",
+      sendBtn: "Send"
+    },
+    fr: {
+      pageTitle: "Formulaire de Réservation",
+      nameInput: "Prénom",
+      surnameInput: "Nom de famille",
+      phoneInput: "Numéro de téléphone",
+      messageInput: "Écrivez votre message ici...",
+      sendBtn: "Envoyer"
+    },
+    de: {
+      pageTitle: "Reservierungsformular",
+      nameInput: "Vorname",
+      surnameInput: "Nachname",
+      phoneInput: "Telefonnummer",
+      messageInput: "Schreiben Sie hier Ihre Nachricht...",
+      sendBtn: "Senden"
+    }
+  };
+
+  function setLanguage(lang) {
+    document.getElementById("pageTitle").innerText = translations[lang].pageTitle;
+    document.getElementById("nameInput").placeholder = translations[lang].nameInput;
+    document.getElementById("surnameInput").placeholder = translations[lang].surnameInput;
+    document.getElementById("phoneInput").placeholder = translations[lang].phoneInput;
+    document.getElementById("messageInput").placeholder = translations[lang].messageInput;
+    document.getElementById("sendBtn").innerText = translations[lang].sendBtn;
+
+    document.body.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+    document.documentElement.lang = lang;
+  }
+
+  // تفعيل الترجمة الإنجليزية تلقائيًا عند التحميل
+  window.onload = function () {
+    setLanguage('en');
+  };
 </script>
 
 </body>
