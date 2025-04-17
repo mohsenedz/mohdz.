@@ -1,205 +1,158 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>عرض صور تلقائي متجاوب</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap');
+    
     body {
       background: #101010;
       margin: 0;
       padding: 0;
-      height: 100%;
-  
-         
-    font-family: 'Aref Ruqaa', serif;
-
-      
-      
-     
-      
-    }
- #moh2{
-     width: 70px;
-   padding:10 % 20%;
-     }
-   
-   .mn {
-    
-  border: 5px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background:#FF8B0B;
-}
-   
-      #moh3{
-     width: 100%;
-     }
-     #moh{
-         color:#black;
-         padding: 12px;
-         
-      }
-     #mm{
-   border:2px solid #FF8B0B;
-   padding:5px 10px;
-border-radius: 25px;
-   color:black;
-  font-size: 30px;
-  background:#FF8B0B;
-  
-     }
-     
-     .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh; 
-  
-}
-     .m1 {display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30vh; 
-         padding:2px 30px
-     }
-     //صور//
-      
- #slider {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    margin: auto;
-    overflow: hidden;
-  }
-
-  #slider img {
-    width: 100%;
-    height: auto;
-    display: none;
-  }
-
-  #slider img.active {
-    display: block;
-  }
-     
-     #moh0{
-         background:black;
-         color : #FF8B0B;
-         border-left: 10px solid #FF8B0B;
-         
-  
-     
-     
-     
-     
-     //اللغة//
-     
-     
-     .dropdown {
-      position: relative;
-      display: inline-block;
+      font-family: 'Aref Ruqaa', serif;
+      color: #FF8B0B;
     }
 
-    .dropbtn {
-      background-color: #ff8B0B;
-      color: white;
-      padding: 10px 16px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
+    .mn {
+      border: 5px solid black;
+      display: flex;
+      align-items: center;
+      background: #FF8B0B;
+      padding: 10px;
     }
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-      border-radius: 5px;
+    #moh2 {
+      width: 70px;
+      margin-right: 15px;
     }
 
-    .dropdown-content a {
+    #moh3 {
+      width: 100%;
+      display: block;
+    }
+
+    #moh {
+      color: #000;
+      margin: 0;
+    }
+
+    #mm {
+      border: 2px solid #FF8B0B;
+      padding: 5px 20px;
+      border-radius: 25px;
       color: black;
-      padding: 10px 16px;
-      text-decoration: none;
+      font-size: 24px;
+      background: #FF8B0B;
+      cursor: pointer;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .m1 {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      padding: 10px 30px;
+    }
+
+    #slider {
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    #slider img {
+      width: 100%;
+      height: auto;
+      display: none;
+    }
+
+    #slider img.active {
       display: block;
     }
 
-    .dropdown-content a:hover {
-      background-color: #f1f1f1;
+    #moh0 {
+      background: black;
+      color: #FF8B0B;
+      border-left: 10px solid #FF8B0B;
+      padding: 10px;
     }
 
-    .dropdown:hover .dropdown-content {
-      display: block;
+    #language-switcher {
+      text-align: center;
+      margin: 30px 0;
     }
 
-    .dropdown:hover .dropbtn {
-      background-color: #e07a08;
+    #language-switcher button {
+      margin: 0 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #FF8B0B;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      color: black;
+      
     }
-     
+
+    hr {
+      border: 1px solid #FF8B0B;
+      margin: 40px 0;
+    }
   </style>
 </head>
 <body>
-  
-<dive class="mn">
- 
-  <img src="img1.png" id="moh2">
-  <h1 id="moh">Doctor   </h1>
-</dive>
+
+  <div class="mn">
+    <img src="img1.png" id="moh2">
+    <h1 id="moh" data-i18n="doctor">Doctor</h1>
+  </div>
+
   <img src="img2.jpg" id="moh3">
-   <h1 id="moh0">to appointment </h1>
-   
-   <body>
+
+  <h1 id="moh0" data-i18n="to_appointment">To appointment</h1>
   <div class="m1">
-   <p style="color: #FF8B0B">hi if you want to her you kann with mie just tell me and just call me wen you went to come </p></div>
-  
+    <p data-i18n="text1">Hi, if you want to hear, you can with me. Just tell me and call me when you want to come.</p>
+  </div>
+
   <div class="container">
-    <h1 id="mm" onclick="nn()">appointment</h1>  </div>
-    <h1 id="moh0">who im </h1>
- <div class="m1">
-   <p style="color: #FF8B0B">hi if you want to her you kann with mie just tell me and just call me wen you went to come </p></div>
- 
- <h1 id="moh0">wath we doing </h1>
- <div class="m1">
-   <p style="color: #FF8B0B">hi if you want to her you kann with mie just tell me and just call me wen you went to come </p></div>
- 
-  <h1 id="moh0"> rate people or img </h1>
+    <h1 id="mm" onclick="nn()" data-i18n="appointment">Appointment</h1>
+  </div>
+
+  <h1 id="moh0" data-i18n="who_im">Who I am</h1>
+  <div class="m1">
+    <p data-i18n="text2">Hi, if you want to hear, you can with me. Just tell me and call me when you want to come.</p>
+  </div>
+
+  <h1 id="moh0" data-i18n="what_doing">What we are doing</h1>
+  <div class="m1">
+    <p data-i18n="text3">Hi, if you want to hear, you can with me. Just tell me and call me when you want to come.</p>
+  </div>
+
+  <h1 id="moh0" data-i18n="rate">Rate people or image</h1>
+  <div id="slider">
+    <img src="img11.jpg" class="active">
+    <img src="img22.jpg">
+    <img src="img33.jpg">
+  </div>
+
+  <h1 id="moh0" data-i18n="information">Information</h1>
+  <div class="m1">
+    <p data-i18n="text4">Hi, if you want to hear, you can with me. Just tell me and call me when you want to come.</p>
+  </div>
+
+  <hr>
+
+
   
-  
-  
-  
-  
-  
-  
- <div id="slider">
-  <img src="img11.jpg" class="active">
-  <img src="img22.jpg">
-  <img src="img33.jpg">
-</div>
-<h1 id="moh0">information </h1>
- <div class="m1">
-   <p style="color: #FF8B0B">hi if you want to her you kann with mie just tell me and just call me wen you went to come </p></div>
-
-
-
-
-
-<hr style="border: 1px solid #ff8B0B;">
-
-
-
-
-
-
-
-
-
-<div id="language-switcher">
+  <div id="language-switcher">
     <button onclick="changeLanguage('de')">Deutsch</button>
     <button onclick="changeLanguage('en')">English</button>
     <button onclick="changeLanguage('fr')">Français</button>
@@ -211,48 +164,79 @@ border-radius: 25px;
   </div>
   
 
+  <script>
+    // Auto slider
+    let images = document.querySelectorAll("#slider img");
+    let current = 0;
+    setInterval(() => {
+      images[current].classList.remove("active");
+      current = (current + 1) % images.length;
+      images[current].classList.add("active");
+    }, 3000);
 
+    // Multi-language content
+    const translations = {
+      de: {
+  doctor: "Arzt",
+  to_appointment: "Zum Termin",
+  appointment: "Termin",
+  who_im: "Wer bin ich",
+  what_doing: "Was machen wir",
+  rate: "Bewerte Personen oder das Bild",
+  information: "Informationen",
+  text1: "Hallo, wenn du Hilfe brauchst, kannst du dich gerne bei mir melden. Sag mir einfach Bescheid und ruf mich an, wenn du kommen möchtest.",
+  text2: "Hallo, wenn du Hilfe brauchst, kannst du dich gerne bei mir melden. Sag mir einfach Bescheid und ruf mich an, wenn du kommen möchtest.",
+  text3: "Hallo, wenn du Hilfe brauchst, kannst du dich gerne bei mir melden. Sag mir einfach Bescheid und ruf mich an, wenn du kommen möchtest.",
+  text4: "Hallo, wenn du Hilfe brauchst, kannst du dich gerne bei mir melden. Sag mir einfach Bescheid und ruf mich an, wenn du kommen möchtest.",
+  copyright: "Urheberrecht medizinische Klinik"
+},
+      en: {
+        doctor: "Doctor",
+        to_appointment: "To appointment",
+        appointment: "Appointment",
+        who_im: "Who I am",
+        what_doing: "What we are doing",
+        rate: "Rate people or image",
+        information: "Information",
+        text1: "Hi, if you want to hear, you can with me. Just tell me and call me when you want to come.",
+        text2: "Hi, if you want to hear, you can with me. Just tell me and call me when you want to come.",
+        text3: "Hi, if you want to hear, you can with me. Just tell me and call me when you want to come.",
+        text4: "Hi, if you want to hear, you can with me. Just tell me and call me when you want to come.",
+        copyright: "Copyright Medical Clinic."
+      },
+      fr: {
+        doctor: "Docteur",
+        to_appointment: "Au rendez-vous",
+        appointment: "Rendez-vous",
+        who_im: "Qui je suis",
+        what_doing: "Ce que nous faisons",
+        rate: "Évaluer les gens ou l'image",
+        information: "Information",
+        text1: "Bonjour, si vous avez besoin d'aide, vous pouvez me contacter. Dites-moi simplement et appelez-moi quand vous voulez venir.",
+        text2: "Bonjour, si vous avez besoin d'aide, vous pouvez me contacter. Dites-moi simplement et appelez-moi quand vous voulez venir.",
+        text3: "Bonjour, si vous avez besoin d'aide, vous pouvez me contacter. Dites-moi simplement et appelez-moi quand vous voulez venir.",
+        text4: "Bonjour, si vous avez besoin d'aide, vous pouvez me contacter. Dites-moi simplement et appelez-moi quand vous voulez venir.",
+        copyright: "Droits d'auteur Clinique Médicale."
+      }
+    };
 
+    function changeLanguage(lang) {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        el.textContent = translations[lang][key];
+      });
+    }
 
-
-
-
-
+    // Dummy function for demo
+    function nn() {
+      alert("You clicked on 'appointment'!");
+    }
     
-<script>
-  let images = document.querySelectorAll("#slider img");
-  let current = 0;
-
-  setInterval(() => {
-    images[current].classList.remove("active");
-    current = (current + 1) % images.length;
-    images[current].classList.add("active");
-  }, 3000);
-  
-  
-  
-  
-      
-       window.location.href = "pro1.html";
-  }
-  
-  
-  
-  
-  
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-  
+    
+    function nn() {
+  window.location.href = "pro1.html";
+}
+    
+  </script>
 </body>
 </html>
