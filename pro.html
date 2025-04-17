@@ -192,27 +192,33 @@ border-radius: 25px;
 <hr style="border: 1px solid #ff8B0B;">
 
 
-//زراللغة//
 
 
-<div class="dropdown">
-  <button class="dropbtn">🌐 Sprache wählen</button>
-  <div class="dropdown-content">
-    <a href="#" onclick="setLanguage('de')">Deutsch</a>
-    <a href="#" onclick="setLanguage('en')">English</a>
-    <a href="#" onclick="setLanguage('fr')">Français</a>
-    <a href="#" onclick="setLanguage('ar')">العربية</a>
+
+
+
+
+
+<div id="language-switcher">
+    <button onclick="changeLanguage('de')">Deutsch</button>
+    <button onclick="changeLanguage('en')">English</button>
+    <button onclick="changeLanguage('fr')">Français</button>
   </div>
-</div>
+
+
+<div class="m1">
+    <p>© <span data-i18n="copyright">Copyright Medical Clinic.</span></p>
+  </div>
+  
 
 
 
 
 
 
- <div class="m1">
-   <p style="color: #FF8B0B">© Copyright Medical Clinic. </p></div>
 
+
+    
 <script>
   let images = document.querySelectorAll("#slider img");
   let current = 0;
@@ -223,34 +229,9 @@ border-radius: 25px;
     images[current].classList.add("active");
   }, 3000);
   
-  //زراللغة//
   
-  const translations = {
-    de: {
-      title: "Willkommen!",
-      description: "Wähle deine Sprache aus dem Menü oben."
-    },
-    en: {
-      title: "Welcome!",
-      description: "Choose your language from the menu above."
-    },
-    fr: {
-      title: "Bienvenue!",
-      description: "Choisissez votre langue dans le menu ci-dessus."
-    },
-    ar: {
-      title: "مرحبًا!",
-      description: "اختر لغتك من القائمة أعلاه."
-    }
-  };
-
-  function setLanguage(lang) {
-    document.getElementById("title").innerText = translations[lang].title;
-    document.getElementById("description").innerText = translations[lang].description;
-    document.body.dir = lang === 'ar' ? 'rtl' : 'ltr'; // دعم اتجاه اللغة
-  }
   
-  function nn(){
+  
       
        window.location.href = "pro1.html";
   }
